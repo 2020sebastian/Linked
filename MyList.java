@@ -1,6 +1,6 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import java.util.Scanner;
+
 
 
 /**
@@ -243,34 +243,8 @@ public class MyList<E extends Comparable<E>> implements Iterable<E> {
 	}
 
 	/**
-	 * Simple test application. See JUnit test class MyListTest.java
-	 * for a bit more extensive unit test.
+	 * See JUnit test class MyListTest.java
+	 * 
 	 */
-	public static void main(String[] args)
-	{
-		Scanner stdin = new Scanner(System.in);
-		int n;
-		System.out.printf("Generate how many random numbers: ");
-		n = stdin.nextInt();
-		
-		MyList<Double> lst = new MyList<Double>();
-		
-		for(int i = 0; i < n; i++) {
-			double x = Math.random();
-			lst.add(x);
-		}
-		int count = 0;
-		Iterator<Double> p = lst.iterator();
-		while(p.hasNext()) {
-			double x = p.next();
-			if (x <= 0.5) {
-				count++;
-			}
-		}
-		System.out.printf("The fraction of %d randomly generated betwee 0.0 and 1.0 that were <= 0.5 is %.3f", 
-				lst.size(), (double) count / lst.size());
-
-
-	}
 
 }
